@@ -4,7 +4,7 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("example")
+@ConfigGroup("alteredstats")
 public interface AlteredStatsConfig extends Config
 {
 	public enum AlteredStatsDisplayType {
@@ -16,7 +16,7 @@ public interface AlteredStatsConfig extends Config
 	@ConfigItem(
 		keyName = "showAllStats",
 		name = "Show all stats",
-		description = "Turn on to show a label for ALL stats. Turn off to only show a label for altered stats."
+		description = "Turn on to show a label for ALL stats. Leave off to only show a label for altered stats."
 	)
 	default boolean showAllStats()
 	{
@@ -26,7 +26,7 @@ public interface AlteredStatsConfig extends Config
 	@ConfigItem(
 			keyName = "includeHP",
 			name = "Include HP",
-			description = "Turn on to include HP. Turn off to ignore HP."
+			description = "Leave on to include HP. Turn off to ignore HP."
 	)
 	default boolean includeHP()
 	{
@@ -35,7 +35,7 @@ public interface AlteredStatsConfig extends Config
 
 	@ConfigItem(
 			keyName = "displayType",
-			name = "Show",
+			name = "Display",
 			description = "The type of display to show. Options are: Deltas (+4) | Levels (99) | Levels with bases (99/95)"
 	)
 	default AlteredStatsDisplayType displayType()
