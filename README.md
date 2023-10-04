@@ -1,5 +1,5 @@
 # Altered Stats
-![Active Installs](http://img.shields.io/endpoint?url=https://i.pluginhub.info/shields/installs/plugin/altered-stats) ![Plugin Rank](http://img.shields.io/endpoint?url=https://i.pluginhub.info/shields/rank/plugin/altered-stats)
+[![Active Installs](http://img.shields.io/endpoint?url=https://i.pluginhub.info/shields/installs/plugin/altered-stats)](https://runelite.net/plugin-hub/Jason) [![Plugin Rank](http://img.shields.io/endpoint?url=https://i.pluginhub.info/shields/rank/plugin/altered-stats)](https://runelite.net/plugin-hub/)
 
 A plugin that shows any stats that are altered from their current base level. This only tracks hard level changes (such as boosts from potions and loss of prayer due to usage) and not invisible boosts (like the celestial ring).
 
