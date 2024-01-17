@@ -30,7 +30,7 @@ public class AlteredStatsOverlay extends OverlayPanel
         this.client = client;
         this.config = config;
 
-        setPosition(OverlayPosition.BOTTOM_LEFT);
+        setPosition(OverlayPosition.ABOVE_CHATBOX_RIGHT);
         setPriority(OverlayPriority.MED);
         getMenuEntries().add(new OverlayMenuEntry(RUNELITE_OVERLAY_CONFIG, OPTION_CONFIGURE, "Altered stats overlay."));
     }
@@ -40,12 +40,15 @@ public class AlteredStatsOverlay extends OverlayPanel
     {
         Skill[] skills = this.skills;
         if (!config.includeHP()) {
-            skills = Arrays.stream(this.skills).filter(s -> s != Skill.HITPOINTS).toArray(Skill[]::new);
+            skills = Arrays.stream(skills).filter(s -> s != Skill.HITPOINTS).toArray(Skill[]::new);
+        }
+        if (!config.includePrayer()) {
+            skills = Arrays.stream(skills).filter(s -> s != Skill.PRAYER).toArray(Skill[]::new);
         }
         for (Skill skill: skills) {
             int boosted = client.getBoostedSkillLevel(skill);
             int level = client.getRealSkillLevel(skill);
-            if(boosted != level || config.showAllStats()) {
+            if (boosted != level) {
                 setOverlayText(skill, boosted, level);
             }
         }
